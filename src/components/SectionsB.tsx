@@ -9,7 +9,6 @@ import {
   LANGUAGES,
   FAQS,
   BANNER_IMG,
-  DEMO_VIDEO,
   MANUAL_PDF,
   DOCS_INDEX,
   REPO_URL,
@@ -38,7 +37,7 @@ export function Armies() {
             The troop bar must match <span className="text-gold">the group</span>
           </>
         }
-        note="Composition AND visible troop-bar order. If the icons shift — heroes, Clan Castle troops — the bot taps the wrong slot."
+        note="These are reference armies. Check the current troop bar before starting and record a new pattern if your composition changes."
       />
 
       <div className="grid lg:grid-cols-12 gap-6">
@@ -126,7 +125,7 @@ export function Recording() {
             Record one perfect attack, <span className="text-elixir">replay it forever</span>
           </>
         }
-        note="REGISTRA_ATTACCO.bat captures natural timing only. Search clicks, Next, zooms and window-focus taps must stay out of the recording."
+        note="The recorder captures clicks in the game window. Keep search, Next, zoom and return-to-village clicks out of the deployment preset."
       />
 
       <div className="grid lg:grid-cols-12 gap-6">
@@ -189,18 +188,10 @@ export function Recording() {
           </Reveal>
 
           <Reveal delay={330}>
-            <div className="rounded-lg border border-line2 overflow-hidden relative group">
-              <video
-                src={DEMO_VIDEO}
-                controls
-                preload="none"
-                poster={BANNER_IMG}
-                className="w-full aspect-video object-cover bg-ink"
-              />
-              <span className="absolute top-2 left-2 font-mono text-[9px] tracking-[0.2em] bg-ink/80 border border-line2 text-gold px-2 py-1 rounded-sm pointer-events-none">
-                MoodBot_Demo.mp4
-              </span>
-            </div>
+            <figure className="rounded-lg border border-line2 p-5 rc32-preview">
+              <img src={`${import.meta.env.BASE_URL}media/recorder-rc32.png`} alt="MoodBot RC32 record an attack window" loading="lazy" className="mx-auto w-full max-w-[410px] rounded-md" />
+              <figcaption className="mt-4 text-sm text-fog">The recorder follows the language selected in MoodBot.</figcaption>
+            </figure>
           </Reveal>
         </div>
       </div>
@@ -218,10 +209,10 @@ export function Docs() {
         eyebrow="DOCUMENTATION"
         title={
           <>
-            One manual, <span className="text-gold">eight languages</span>, 65 pages
+            One manual, <span className="text-gold">eight languages</span>, 33 pages
           </>
         }
-        note="Setup, licensing, interface, armies, daily use, recording, pattern management and troubleshooting — translated in full, not summarized."
+        note="Setup, licensing, daily use, recording and troubleshooting, with interface screenshots in each language."
       />
 
       {/* banner with ken burns */}
@@ -230,15 +221,15 @@ export function Docs() {
           <div className="overflow-hidden max-h-[420px]">
             <img
               src={BANNER_IMG}
-              alt="MoodBot V10.14 interface"
+              alt="MoodBot V10.21 RC32 cover artwork"
               loading="lazy"
-              className="kenburns w-full object-cover"
+              className="w-full max-h-[420px] object-cover object-center"
             />
           </div>
           <div className="absolute inset-0 bg-gradient-to-t from-ink via-transparent to-transparent pointer-events-none" />
           <figcaption className="absolute bottom-0 inset-x-0 flex flex-wrap items-center gap-4 p-5">
             <span className="font-mono text-[10px] tracking-[0.22em] text-moss bg-ink/80 border border-line2 px-3 py-1.5 rounded-sm">
-              V10.14 INTERFACE — LIGHT &amp; DARK THEMES
+              V10.21 RC32 · INTERACTIVE GUIDE
             </span>
             <a
               href={MANUAL_PDF}
@@ -257,7 +248,7 @@ export function Docs() {
         {LANGUAGES.map((l, i) => (
           <Reveal key={l.code} delay={i * 50}>
             <a
-              href={MANUAL_PDF}
+              href={`${MANUAL_PDF}#page=${l.page}`}
               target="_blank"
               rel="noreferrer"
               className="card-lift group flex flex-col h-full rounded-lg border border-line bg-panel p-4 hover:border-gold/60"
@@ -265,7 +256,7 @@ export function Docs() {
               <span className="font-display text-2xl text-gold group-hover:text-goldhi transition-colors">{l.code}</span>
               <span className="text-sm text-paper font-medium mt-1">{l.name}</span>
               <span className="font-mono text-[10px] text-dim mt-auto pt-2 flex justify-between">
-                <span>PP. {l.pages}</span>
+                <span>PAGE {l.page}</span>
                 <Icon name="arrow" className="w-3.5 h-3.5 text-moss opacity-0 group-hover:opacity-100 transition-opacity" />
               </span>
             </a>
@@ -385,7 +376,7 @@ export function Contact() {
               <p className="text-fog leading-relaxed mt-4 max-w-md">
                 MoodBot is not publicly downloadable from the repository — the public repo carries
                 documentation only. Source code, installer, license files and private keys stay private.
-                Reach out, send your HWID, receive your MB2 key.
+                Contact support with your HWID to request a license or renewal.
               </p>
             </div>
             <div className="flex flex-col justify-center gap-4">

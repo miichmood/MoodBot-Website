@@ -273,7 +273,7 @@ export function Logo({ className = "" }: { className?: string }) {
         MOOD<span className="text-gold">BOT</span>
       </span>
       <span className="font-mono text-[10px] px-1.5 py-0.5 border border-line2 text-moss rounded-sm">
-        V10.14
+        V10.21 RC32
       </span>
     </a>
   );

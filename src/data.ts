@@ -1,11 +1,7 @@
 export const REPO_URL = "https://github.com/miichmood/MoodBot-ClashOfClans";
-export const MANUAL_PDF =
-  "https://github.com/miichmood/MoodBot-ClashOfClans/blob/main/docs/MoodBot_V10.14_Multilingual_User_Manual.pdf";
-export const DOCS_INDEX = "https://github.com/miichmood/MoodBot-ClashOfClans/blob/main/docs/README.md";
-export const BANNER_IMG =
-  "https://raw.githubusercontent.com/miichmood/MoodBot-ClashOfClans/main/docs/images/moodbot-v10.14-interface.png";
-export const DEMO_VIDEO =
-  "https://raw.githubusercontent.com/miichmood/MoodBot-ClashOfClans/main/MoodBot_Demo.mp4";
+export const MANUAL_PDF = `${import.meta.env.BASE_URL}media/MoodBot_V10.21_RC32_Manuale_Interattivo.pdf`;
+export const DOCS_INDEX = `${REPO_URL}/blob/main/docs/README.md`;
+export const BANNER_IMG = `${import.meta.env.BASE_URL}media/moodbot-rc32.png`;
 
 export const NAV_LINKS = [
   { label: "Console", href: "#console" },
@@ -19,12 +15,12 @@ export const NAV_LINKS = [
 ];
 
 export const MARQUEE = [
-  "V10.14 — JULY 2026",
+  "V10.21 RC32",
   "8 LANGUAGES",
   "TH 1-6 → TH 13+",
-  "GOLD FILTER 0 – 2.5M",
-  "FAST / BALANCED / SAFE",
-  "PLAYBACK 1.0× – 6.0×",
+  "GOLD · ELIXIR · DARK ELIXIR",
+  "HERO & TROOP RESERVES",
+  "STORAGE-AWARE TARGETS",
   "HWID LICENSE",
   "ADB × LDPLAYER",
   "ATTACK RECORDER",
@@ -51,58 +47,58 @@ export const FEATURES: Feature[] = [
   },
   {
     icon: "coins",
-    title: "Minimum-gold filtering",
-    body: "Set a floor from 0 to 2,500,000 gold. Bases below the threshold are skipped instantly — the bot only commits troops when the loot is worth it.",
+    title: "Three loot filters",
+    body: "Set a minimum for gold, elixir or dark elixir. A base must meet every active threshold. The reader also handles displayed 2× and 3× loot bonuses.",
     tag: "FILTER",
     span: "md:col-span-5",
   },
   {
     icon: "gauge",
-    title: "Three navigation profiles",
-    body: "FAST pushes the pace, BALANCED keeps rhythm, SAFE slows every transition down for fragile setups. Switch mid-session strategy without reconfiguring.",
+    title: "Unused troops and heroes",
+    body: "After replay, MoodBot checks for unused cards. It tries deployment points near the edge for recognized troops, heroes and reinforcements, and aims spells toward the center.",
     span: "md:col-span-4",
   },
   {
     icon: "film",
-    title: "Playback 1.0× – 6.0×",
-    body: "Replay recorded deployments at human tempo or sprint at 6× speed. Too many desyncs? Drop back to 1.0×–2.0× and the patterns stay pixel-true.",
+    title: "Changes to the troop bar",
+    body: "If the visible cards no longer match the preset slots, MoodBot can deploy the cards it recognizes directly. The resulting attack can differ from the preset.",
     span: "md:col-span-4",
   },
   {
     icon: "record",
     title: "Built-in attack recorder",
-    body: "Press Record (or run REGISTRA_ATTACCO.bat), play one perfect attack by hand, hit ESC — MoodBot stores the timing as a reusable JSON pattern.",
+    body: "Open Record from the Windows app. Start, deploy in LDPlayer, then choose Stop and save. The interface uses the selected language.",
     tag: "NEW",
     span: "md:col-span-4",
   },
   {
     icon: "wall",
     title: "Automatic wall upgrades",
-    body: "Optional module pours spare resources into walls between raids, so your loot keeps working while the bot keeps farming.",
+    body: "Enable periodic wall checks with a default reserve of 50,000 gold. With walls disabled, confirmed storage capacity guides target selection and ends the session when all storages are full.",
     span: "md:col-span-5",
   },
   {
     icon: "dice",
-    title: "Randomized behaviour",
-    body: "Patterns are picked at random from the group folder, and optional random pauses break up session rhythm — no two runs look identical.",
+    title: "Recorded patterns and pauses",
+    body: "MoodBot can choose a saved pattern from the selected group and take optional pauses between cycles at the village.",
     span: "md:col-span-7",
   },
   {
     icon: "log",
     title: "Session counters + Activity log",
-    body: "Attacks, skips, collected loot and every ADB decision land in a detailed, timestamped Activity log — copy it straight into a support report.",
+    body: "Track attacks, searches and wall upgrades. The Activity tab shows recognized states and recovery messages, and has a Copy button for support.",
     span: "md:col-span-6",
   },
   {
     icon: "globe",
     title: "Eight languages, two themes",
-    body: "The full interface ships in IT · EN · ES · FR · DE · PT · RU · TR with light and dark skins. The 65-page manual follows in every language.",
+    body: "MoodBot offers light and dark themes and eight interface languages. The interactive 33-page guide includes screenshots in each language.",
     span: "md:col-span-6",
   },
   {
     icon: "key",
     title: "Hardware-bound license",
-    body: "Activation is tied to your computer's HWID and unlocked with a personal key starting with MB2. One key, one machine — no floating installs.",
+    body: "Activate with your personal MB3 code or .mblic file. Open Subscription to check the plan, expiry date or renew.",
     tag: "LICENSE",
     span: "md:col-span-12",
   },
@@ -112,27 +108,27 @@ export const LOOP_STEPS = [
   {
     n: "01",
     title: "Opens multiplayer search",
-    body: "MoodBot taps through to the matchmaking screen exactly like a player would — same route, same timing, driven over ADB.",
+    body: "MoodBot opens multiplayer matchmaking over the local ADB connection.",
   },
   {
     n: "02",
     title: "Reads Available Loot",
-    body: "The gold figure on screen is read and compared against your configured minimum-gold threshold.",
+    body: "Available loot is compared with the active gold, elixir and dark elixir filters.",
   },
   {
     n: "03",
     title: "Skips — or deploys",
-    body: "Below the floor? Next base. Above it? A random attack_pattern*.json from the selected TH group is replayed at your playback speed.",
+    body: "MoodBot skips bases that miss a threshold. For a matching base, it can load a recorded preset for the selected Town Hall group.",
   },
   {
     n: "04",
     title: "Waits out the battle",
-    body: "Troops, spells, heroes and abilities land on their recorded timings. MoodBot waits for the battle to resolve on its own.",
+    body: "MoodBot checks remaining cards, requests 4× battle speed if the game offers it, then waits for the result.",
   },
   {
     n: "05",
     title: "Confirms return home",
-    body: "The attack only counts after the return to the HOME screen is confirmed — counters, loot totals and the Activity log update, then the cycle restarts.",
+    body: "MoodBot confirms the return to the village before continuing. It can recover from recognized connection prompts and handle recognized rewards.",
   },
 ];
 
@@ -140,7 +136,7 @@ export const DO_RULES = [
   "Keep exactly one LDPlayer instance open",
   "Stay on a clean HOME screen, standard scenery",
   "Prepare the army that matches the selected group",
-  "Leave the Clan Castle empty",
+  "Record the pattern with the army you intend to use",
   "Watch the Activity log during the first runs",
 ];
 
@@ -160,7 +156,6 @@ export const REQUIREMENTS = [
   { k: "ADB", v: "Local ADB connection enabled" },
   { k: "Game language", v: "Clash of Clans must stay in English" },
   { k: "Game state", v: "Standard scenery · clean HOME · no pop-ups" },
-  { k: "Clan Castle", v: "Empty — extra troops shift troop-bar icons" },
 ];
 
 export const SETUP_STEPS = [
@@ -177,8 +172,8 @@ export const SETUP_STEPS = [
     body: "At first launch MoodBot displays your machine's HWID. Copy it and send it to the MoodBot creator.",
   },
   {
-    title: "Activate with your MB2 key",
-    body: "Paste the complete personal key — it always begins with MB2 — to bind the license to your hardware.",
+    title: "Activate your license",
+    body: "Paste the personal MB3 code or import the .mblic file you received for that computer.",
   },
   {
     title: "Configure LDPlayer",
@@ -186,11 +181,11 @@ export const SETUP_STEPS = [
   },
   {
     title: "Prepare the game",
-    body: "Start Clash of Clans in English, train the correct army for your group and empty the Clan Castle.",
+    body: "Start Clash of Clans in English, prepare the army for your group and open the village.",
   },
   {
     title: "First test run",
-    body: "Run the first session on the SAFE profile at 1.0×–1.5× and watch the Activity log the whole way.",
+    body: "Choose your Town Hall group and loot thresholds, then monitor the Activity log on your first run.",
   },
 ];
 
@@ -280,11 +275,11 @@ export const ARMIES: ArmyGroup[] = [
 export const RECORD_STEPS = [
   { title: "Stop MoodBot", body: "Keep LDPlayer pinned at 1600 × 900 and 240 DPI before anything else." },
   { title: "Prepare the exact army", body: "The army that will use the new pattern must be trained and in the bar." },
+  { title: "Select the group", body: "Pick the Town Hall group in Overview. MoodBot stores the preset in that group’s folder." },
   { title: "Open an enemy base manually", body: "Leave the base ready for deployment — no search screens, no Next button." },
-  { title: "Press Record", body: "Hit Record in the interface or run REGISTRA_ATTACCO.bat from the package folder." },
-  { title: "Select the group", body: "Pick th6, th7-8, th9-10, th11, th12 or th13plus — the file lands in that folder." },
+  { title: "Press Record", body: "Open Record in MoodBot and choose Start when the battle is ready." },
   { title: "Play the attack naturally", body: "Record only troop selection, deployment points, spells, heroes, abilities and natural timing." },
-  { title: "Press ESC to finish", body: "The pattern is saved as attack_pattern*.json, ready for random selection in sessions." },
+  { title: "Choose Stop and save", body: "The pattern is saved as attack_pattern*.json, ready for random selection in sessions." },
 ];
 
 export const PATTERN_FOLDERS = [
@@ -298,14 +293,14 @@ export const PATTERN_FOLDERS = [
 ];
 
 export const LANGUAGES = [
-  { code: "IT", name: "Italiano", pages: "2 – 9" },
-  { code: "EN", name: "English", pages: "10 – 17" },
-  { code: "ES", name: "Español", pages: "18 – 25" },
-  { code: "FR", name: "Français", pages: "26 – 33" },
-  { code: "DE", name: "Deutsch", pages: "34 – 41" },
-  { code: "PT", name: "Português", pages: "42 – 49" },
-  { code: "RU", name: "Русский", pages: "50 – 57" },
-  { code: "TR", name: "Türkçe", pages: "58 – 65" },
+  { code: "IT", name: "Italiano", page: 2 },
+  { code: "EN", name: "English", page: 6 },
+  { code: "ES", name: "Español", page: 10 },
+  { code: "FR", name: "Français", page: 14 },
+  { code: "DE", name: "Deutsch", page: 18 },
+  { code: "PT", name: "Português", page: 22 },
+  { code: "RU", name: "Русский", page: 26 },
+  { code: "TR", name: "Türkçe", page: 30 },
 ];
 
 export const FAQS = [
@@ -327,14 +322,14 @@ export const FAQS = [
   },
   {
     q: "The wrong troop icon gets clicked",
-    a: "Check the army composition, the troop-bar order and your heroes — and make sure the Clan Castle is empty so extra troops don't shift the icons.",
+    a: "Compare the troop-bar order with the recorded army. If it has changed, record a fresh preset and check Activity for cards MoodBot could not confirm.",
   },
   {
-    q: "Patterns run too fast",
-    a: "Reduce playback to 1.0×–2.0×, or record the pattern again with longer natural pauses between deployments.",
+    q: "A recorded pattern misses cards",
+    a: "Record the pattern again with the current army and zoom. RC32 checks recognized leftovers, but some cards or terrain may still be missed.",
   },
   {
     q: "The bot is stuck in a battle",
-    a: "Stop MoodBot, return to HOME manually, close any pop-up and restart the session in SAFE mode. Save the Activity log and a screenshot before closing anything.",
+    a: "Stop MoodBot, return to the village and close any open dialog. Save the Activity log before restarting.",
   },
 ];

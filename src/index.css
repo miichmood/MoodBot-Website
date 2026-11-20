@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+.rc32-preview {
+  background: radial-gradient(ellipse at 50% 45%, rgba(125, 84, 231, 0.20), transparent 72%), var(--color-panel);
+  box-shadow: 0 20px 70px -38px rgba(126, 84, 232, 0.75);
+}
+
 @theme {
   --color-ink: #0b120e;
   --color-ink2: #0e1712;

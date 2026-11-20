@@ -67,7 +67,7 @@ export function Hero() {
           <Reveal>
             <p className="inline-flex items-center gap-2 font-mono text-[11px] tracking-[0.24em] text-moss border border-line2 rounded-full px-4 py-1.5 bg-panel/70">
               <span className="relative w-1.5 h-1.5 rounded-full bg-moss ping-dot" />
-              V10.14 · MULTILINGUAL DOCS · JULY 2026
+              V10.21 RC32 · MULTILINGUAL DOCS
             </p>
           </Reveal>
 
@@ -76,15 +76,13 @@ export function Hero() {
               {title || "\u00A0"}
             </span>
             <span className="block text-[7.5vw] sm:text-4xl xl:text-[2.6rem] text-outline tracking-tight mt-1">
-              CLASH FARMING, ON AUTOPILOT
+              FARMING ON LDPLAYER
             </span>
           </h1>
 
           <Reveal delay={150}>
             <p className="mt-6 text-fog text-base md:text-lg leading-relaxed max-w-md">
-              MoodBot drives Clash of Clans on LDPlayer through ADB — it hunts multiplayer bases,
-              reads the available gold, skips anything under your floor and replays your recorded
-              attack patterns while you live your life.
+              Filter multiplayer bases by gold, elixir and dark elixir. Replay recorded attacks and check for remaining deployable heroes, troops and spells.
             </p>
           </Reveal>
 
@@ -112,15 +110,14 @@ export function Hero() {
           <Reveal delay={350}>
             <div className="mt-10 grid grid-cols-3 gap-6 max-w-md">
               <Stat value={8} suffix="" label="LANGUAGES" delay={0} />
-              <Stat value={13} suffix="+" label="TOWN HALLS" delay={200} />
-              <Stat value={2500000} suffix="" label="GOLD CEILING" delay={400} />
+              <Stat value={6} suffix="" label="TOWN HALL GROUPS" delay={200} />
+              <Stat value={3} suffix="" label="LOOT FILTERS" delay={400} />
             </div>
           </Reveal>
 
           <Reveal delay={420}>
             <p className="mt-8 font-mono text-[11px] text-dim leading-relaxed max-w-md border-l-2 border-elixir/50 pl-4">
-              ▸ The panel is a live simulation of a MoodBot session — press{" "}
-              <span className="text-moss">START</span>, tune the gold floor, flip the toggles.
+              Browse screenshots of the Windows app using the controls in the preview.
             </p>
           </Reveal>
         </div>
@@ -128,10 +125,6 @@ export function Hero() {
         {/* right — live console */}
         <div className={`lg:col-span-7 transition-all duration-1000 ${ready ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
           <Console />
-          <div className="mt-3 flex items-center justify-between font-mono text-[10px] text-dim px-1">
-            <span>SIMULATED SESSION — NO ACCOUNTS WERE FARMED IN THE MAKING OF THIS PAGE</span>
-            <span className="text-moss">ESC = stop recording</span>
-          </div>
         </div>
       </div>
     </section>
@@ -390,7 +383,7 @@ export function Setup() {
                 )}
                 {i === 3 && (
                   <code className="inline-block mt-3 font-mono text-xs text-gold bg-ink2 border border-line2 px-3 py-1.5 rounded tracking-wider">
-                    MB2-XXXX-XXXX-XXXX-XXXX
+                    MB3 code or .mblic file
                   </code>
                 )}
               </div>

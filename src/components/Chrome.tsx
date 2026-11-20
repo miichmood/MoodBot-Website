@@ -43,8 +43,7 @@ export function Nav() {
             className="btn-chunk hidden sm:flex items-center gap-2 px-3.5 py-2 rounded border border-line2 font-mono text-[11px] text-fog hover:text-paper hover:border-gold"
           >
             <Icon name="github" className="w-4 h-4" />
-            <span className="hidden md:inline">miichmood/MoodBot</span>
-            <span className="text-gold">★ 4</span>
+            <span className="hidden md:inline">GitHub</span>
           </a>
           <a
             href={MANUAL_PDF}
@@ -186,7 +185,7 @@ export function Footer() {
             This project is not affiliated with, endorsed by or sponsored by Supercell. Clash of Clans is a
             trademark of Supercell Oy.
           </p>
-          <p className="text-line2 pt-2">MOODBOT V10.14 · docs refreshed July 2026 · © miichmood</p>
+          <p className="text-dim pt-2">MOODBOT V10.21 RC32 · © miichmood</p>
         </div>
       </div>
     </footer>
