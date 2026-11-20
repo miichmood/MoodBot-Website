@@ -207,10 +207,10 @@ export function Docs() {
         eyebrow="DOCUMENTATION"
         title={
           <>
-            One manual, <span className="text-gold">eight languages</span>, 33 pages
+            One manual, <span className="text-gold">eight languages</span>, 49 pages
           </>
         }
-        note="Setup, licensing, daily use, recording and troubleshooting, with interface screenshots in each language."
+        note="Illustrated LDPlayer setup, licensing, daily use, recording and troubleshooting in eight languages."
       />
 
       {/* banner with ken burns */}

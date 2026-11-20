@@ -1,5 +1,5 @@
 export const REPO_URL = "https://github.com/miichmood/MoodBot-ClashOfClans";
-export const MANUAL_PDF = `${import.meta.env.BASE_URL}media/MoodBot_V10.21_RC32_Manuale_Interattivo.pdf`;
+export const MANUAL_PDF = `${import.meta.env.BASE_URL}media/MoodBot_V10.21_RC32_Manuale_Interattivo.pdf?rev=ldplayer-setup`;
 export const DOCS_INDEX = `${REPO_URL}/blob/main/docs/README.md`;
 export const BANNER_IMG = `${import.meta.env.BASE_URL}media/moodbot-rc32.png`;
 export const TH19_NOTES = "https://supercell.com/en/games/clashofclans/blog/release-notes/the-clash-of-titans-update-is-rolling-out/";
@@ -93,7 +93,7 @@ export const FEATURES: Feature[] = [
   {
     icon: "globe",
     title: "Eight languages, two themes",
-    body: "MoodBot offers light and dark themes and eight interface languages. The interactive 33-page guide includes screenshots in each language.",
+    body: "MoodBot offers light and dark themes and eight interface languages. The interactive guide includes localized MoodBot screenshots and illustrated LDPlayer setup steps.",
     span: "md:col-span-6",
   },
   {
@@ -295,13 +295,13 @@ export const PATTERN_FOLDERS = [
 
 export const LANGUAGES = [
   { code: "IT", name: "Italiano", page: 2 },
-  { code: "EN", name: "English", page: 6 },
-  { code: "ES", name: "Español", page: 10 },
-  { code: "FR", name: "Français", page: 14 },
-  { code: "DE", name: "Deutsch", page: 18 },
-  { code: "PT", name: "Português", page: 22 },
-  { code: "RU", name: "Русский", page: 26 },
-  { code: "TR", name: "Türkçe", page: 30 },
+  { code: "EN", name: "English", page: 8 },
+  { code: "ES", name: "Español", page: 14 },
+  { code: "FR", name: "Français", page: 20 },
+  { code: "DE", name: "Deutsch", page: 26 },
+  { code: "PT", name: "Português", page: 32 },
+  { code: "RU", name: "Русский", page: 38 },
+  { code: "TR", name: "Türkçe", page: 44 },
 ];
 
 export const FAQS = [
