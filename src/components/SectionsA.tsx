@@ -12,6 +12,7 @@ import {
   SETUP_STEPS,
   REPO_URL,
   MANUAL_PDF,
+  TH19_NOTES,
 } from "../data";
 
 /* ================= HERO + LIVE CONSOLE ================= */
@@ -67,7 +68,7 @@ export function Hero() {
           <Reveal>
             <p className="inline-flex items-center gap-2 font-mono text-[11px] tracking-[0.24em] text-moss border border-line2 rounded-full px-4 py-1.5 bg-panel/70">
               <span className="relative w-1.5 h-1.5 rounded-full bg-moss ping-dot" />
-              V10.21 RC32 · MULTILINGUAL DOCS
+              V10.21 RC32 · TOWN HALL 19 UPDATE
             </p>
           </Reveal>
 
@@ -75,8 +76,8 @@ export function Hero() {
             <span className="block text-[15vw] sm:text-7xl xl:text-[5.2rem] text-paper tracking-tight">
               {title || "\u00A0"}
             </span>
-            <span className="block text-[7.5vw] sm:text-4xl xl:text-[2.6rem] text-outline tracking-tight mt-1">
-              FARMING ON LDPLAYER
+            <span className="block text-[7.5vw] sm:text-4xl xl:text-[2.6rem] text-gold tracking-tight mt-1">
+              FOR CLASH OF CLANS
             </span>
           </h1>
 
@@ -117,7 +118,7 @@ export function Hero() {
 
           <Reveal delay={420}>
             <p className="mt-8 font-mono text-[11px] text-dim leading-relaxed max-w-md border-l-2 border-elixir/50 pl-4">
-              Browse screenshots of the Windows app using the controls in the preview.
+              Try the browser preview with sample data. <a href={TH19_NOTES} className="text-gold underline underline-offset-4">Read the Clash of Titans update notes.</a>
             </p>
           </Reveal>
         </div>

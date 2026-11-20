@@ -2,6 +2,7 @@ export const REPO_URL = "https://github.com/miichmood/MoodBot-ClashOfClans";
 export const MANUAL_PDF = `${import.meta.env.BASE_URL}media/MoodBot_V10.21_RC32_Manuale_Interattivo.pdf`;
 export const DOCS_INDEX = `${REPO_URL}/blob/main/docs/README.md`;
 export const BANNER_IMG = `${import.meta.env.BASE_URL}media/moodbot-rc32.png`;
+export const TH19_NOTES = "https://supercell.com/en/games/clashofclans/blog/release-notes/the-clash-of-titans-update-is-rolling-out/";
 
 export const NAV_LINKS = [
   { label: "Console", href: "#console" },
@@ -304,6 +305,10 @@ export const LANGUAGES = [
 ];
 
 export const FAQS = [
+  {
+    q: "What does the Town Hall 19 update mean for my presets?",
+    a: "TH 13+ is a shared preset group. After the Clash of Titans update, check the visible troop bar and record a fresh preset if your army changes. TH19-specific controls and the new Squads have yet to be verified in MoodBot.",
+  },
   {
     q: "MoodBot can't find LDPlayer",
     a: "Open only one emulator instance, make sure Clash of Clans is fully started inside it, then reopen MoodBot. Multiple instances confuse the ADB target.",

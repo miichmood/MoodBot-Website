@@ -1,8 +1,63 @@
 @import "tailwindcss";
 
 .rc32-preview {
-  background: radial-gradient(ellipse at 50% 45%, rgba(125, 84, 231, 0.20), transparent 72%), var(--color-panel);
-  box-shadow: 0 20px 70px -38px rgba(126, 84, 232, 0.75);
+  background: radial-gradient(ellipse at 90% 0%, rgba(245, 185, 66, 0.08), transparent 62%), var(--color-panel);
+  box-shadow: 0 20px 70px -38px rgba(245, 185, 66, 0.30);
+}
+
+.demo-console, .demo-recorder {
+  border: 1px solid var(--color-line2);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.demo-titlebar, .demo-tabs, .demo-transport {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: .65rem;
+  padding: .8rem 1.2rem;
+}
+
+.demo-titlebar { font: 600 .8rem var(--font-mono); }
+.demo-titlebar span:last-child, .demo-transport > span { color: var(--color-moss); font: .72rem var(--font-mono); }
+.demo-tabs { border-block: 1px solid var(--color-line); background: var(--color-ink2); padding: .5rem; }
+.demo-tabs > button { flex: 1; padding: .55rem .3rem; color: var(--color-fog); font: .8rem var(--font-mono); border-radius: 5px; }
+.demo-tabs > button[aria-pressed="true"], .demo-button.demo-primary { background: var(--color-gold); color: var(--color-ink); font-weight: 700; }
+.demo-view { padding: 1.25rem; min-height: 285px; }
+.demo-view h3, .demo-recorder h3 { color: var(--color-paper); font: 1.1rem var(--font-display); }
+.demo-view p, .demo-recorder p { color: var(--color-fog); font-size: .88rem; margin-top: .36rem; }
+.demo-filters, .demo-counters { display: grid; gap: .6rem; margin-top: 1.1rem; }
+.demo-filters { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.demo-counters { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.demo-filters > div, .demo-counters > div { border: 1px solid var(--color-line2); border-radius: 6px; padding: .65rem; background: var(--color-ink2); }
+.demo-filters label, .demo-picker, .demo-counters span { display: block; color: var(--color-fog); font: .75rem var(--font-mono); }
+.demo-filters input[type="checkbox"] { accent-color: var(--color-gold); }
+.demo-filters input[type="number"], .demo-picker select { width: 100%; margin-top: .45rem; padding: .4rem; border: 1px solid var(--color-line2); border-radius: 4px; color: var(--color-paper); background: var(--color-panel2); font: .85rem var(--font-mono); }
+.demo-filters input:disabled { opacity: .5; }
+.demo-counters strong { display: block; color: var(--color-gold); margin-bottom: .2rem; font: 1.45rem var(--font-display); }
+.demo-log { margin-top: 1rem; padding: .7rem .8rem; min-height: 104px; background: var(--color-ink2); border: 1px solid var(--color-line); border-radius: 6px; font: .75rem/1.65 var(--font-mono); color: var(--color-fog); }
+.demo-log li + li { border-top: 1px solid var(--color-line); padding-top: .3rem; margin-top: .3rem; }
+.demo-footer { border-top: 1px solid var(--color-line); background: var(--color-ink2); }
+.demo-transport > div { display: flex; flex-wrap: wrap; gap: .45rem; margin-left: auto; }
+.demo-button { border: 1px solid var(--color-line2); border-radius: 5px; padding: .45rem .75rem; color: var(--color-fog); font: .75rem var(--font-mono); }
+.demo-button:disabled { opacity: .45; }
+.demo-console button:enabled, .demo-recorder button:enabled { cursor: pointer; }
+.demo-console :focus-visible, .demo-recorder :focus-visible { outline: 2px solid var(--color-goldhi); outline-offset: 2px; }
+.demo-recorder { padding: 1rem; background: var(--color-panel); }
+.demo-recorder-head { display: flex; flex-wrap: wrap; align-items: start; justify-content: space-between; gap: .8rem; }
+.demo-picker { min-width: 115px; }
+.demo-timeline { display: grid; gap: .4rem; margin-top: 1rem; }
+.demo-timeline button { display: flex; align-items: center; gap: .65rem; padding: .48rem .65rem; border-radius: 5px; border: 1px solid var(--color-line2); background: var(--color-ink2); color: var(--color-paper); text-align: left; font-size: .85rem; }
+.demo-timeline button:enabled { border-color: var(--color-gold); }
+.demo-timeline button:disabled { color: var(--color-fog); }
+.demo-timeline span { display: grid; width: 1.45rem; height: 1.45rem; flex: none; place-items: center; border-radius: 50%; background: var(--color-panel2); color: var(--color-gold); font: .72rem var(--font-mono); }
+.demo-timeline .demo-done { color: var(--color-moss); }
+.demo-recorder .demo-transport { padding: .85rem 0 0; }
+@media (max-width: 400px) {
+  .demo-filters { grid-template-columns: 1fr; }
+  .demo-view { padding: .9rem; }
 }
 
 @theme {

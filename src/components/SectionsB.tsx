@@ -1,4 +1,5 @@
 import { useState } from "react";
+import RecorderDemo from "./RecorderDemo";
 import { Icon } from "./Icons";
 import { SectionHead } from "./Chrome";
 import { Reveal } from "../lib";
@@ -122,7 +123,7 @@ export function Recording() {
         eyebrow="CUSTOM PATTERNS"
         title={
           <>
-            Record one perfect attack, <span className="text-elixir">replay it forever</span>
+            Record a deployment, <span className="text-elixir">reuse the preset</span>
           </>
         }
         note="The recorder captures clicks in the game window. Keep search, Next, zoom and return-to-village clicks out of the deployment preset."
@@ -188,10 +189,7 @@ export function Recording() {
           </Reveal>
 
           <Reveal delay={330}>
-            <figure className="rounded-lg border border-line2 p-5 rc32-preview">
-              <img src={`${import.meta.env.BASE_URL}media/recorder-rc32.png`} alt="MoodBot RC32 record an attack window" loading="lazy" className="mx-auto w-full max-w-[410px] rounded-md" />
-              <figcaption className="mt-4 text-sm text-fog">The recorder follows the language selected in MoodBot.</figcaption>
-            </figure>
+            <RecorderDemo />
           </Reveal>
         </div>
       </div>
@@ -221,9 +219,9 @@ export function Docs() {
           <div className="overflow-hidden max-h-[420px]">
             <img
               src={BANNER_IMG}
-              alt="MoodBot V10.21 RC32 cover artwork"
+              alt="MoodBot RC32 for Clash of Clans. Town Hall 19 update illustrated with an original fortified village."
               loading="lazy"
-              className="w-full max-h-[420px] object-cover object-center"
+              className="w-full object-contain"
             />
           </div>
           <div className="absolute inset-0 bg-gradient-to-t from-ink via-transparent to-transparent pointer-events-none" />
